@@ -1,5 +1,5 @@
 
-# Methodology // Recognization // Exploitation Cheatsheet
+# Methodology // Exploitation Cheatsheet
 
 <details>
   <summary>Enumeration</summary>
