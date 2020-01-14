@@ -1,36 +1,43 @@
 
-## Methodology // Recognization // Exploitation Cheatsheet
+# Methodology // Recognization // Exploitation Cheatsheet
 
 <details>
   <summary>Enumeration</summary>
   <br>
   
+  ## Content discovery
+  
+   - What is the server running on?
+   - Type of underlysing software? 
+   - Versions?
+  
+  ## Vulnerability scanning
+  
+   - Nikto 
+
+  
   [Visual site mapper](http://www.visualsitemapper.com/)
   
   Wappalyzer extension for server/web app details
   
-  Subdomain discovery
+  ## Subdomain discovery
   
-  Sublist3r (scraping)
-  SubFinder-o
+  - Sublist3r (scraping)
+  - SubFinder-o
   
   
-  Directory discovery
+  ## Directory discovery
   
-  Content discovery
-    - What is the server running on?
-    - Type of underlysing software? 
-    - Versions?
-  
+  - dirbuster
+
+
   Screenshot tool for each subdomain/dir/updates
   
   Scanners (as long as the host is allows this)
    
     Burp scanning
     NMap scanning
-  
-  Automation?
-  
+    
 </details>
 
 <details>
