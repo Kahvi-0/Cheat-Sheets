@@ -86,7 +86,7 @@
      
      X-Rewrite-URL: <path>
    
-<details>
+</details>
 
 
 <details>
