@@ -72,6 +72,23 @@
   
 </details>
 
+-----------------------------------------------------------------------------
+
+<details>
+  <summary>403 restrictions bypass</summary>
+  <br>
+   
+   Try other HTTP methods
+   
+   Try headers:
+   
+     X-Original-URL: <path>
+     
+     X-Rewrite-URL: <path>
+   
+<details>
+
+
 <details>
   <summary>XSS</summary>
   <br>
@@ -115,6 +132,18 @@
     - How are the files being varified? Name, POST form or file content?
   
   Payloads: 
+  
+   ## change extension
+    
+    .PhP .php3 .php5
+    
+    .php00.png
+    
+    .php (1).png
+    
+   ## Editing upload request 
+   
+   
  
   
 </details>
