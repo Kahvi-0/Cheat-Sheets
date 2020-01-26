@@ -30,14 +30,13 @@
   
   - dirbuster
 
+ Wordlists
+ 
+    /usr/share/wordlists/dirb/
+    /usr/share/wordlists/dirbuster/
 
-  Screenshot tool for each subdomain/dir/updates
-  
-  Scanners (as long as the host is allows this)
-   
-    Burp scanning
-    NMap scanning
-    
+
+
 </details>
 
 <details>
