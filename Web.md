@@ -331,6 +331,8 @@
 <details>
   <summary>SSRF</summary>
   <br>
+  
+  - Bypass SSRF fix. Change HTTP version from 1.1 to 0.9 and remove the host header completely. On HTTP/0.9 there is no need for a host header.
 </details>
 
 
