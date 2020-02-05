@@ -335,6 +335,36 @@
   - Bypass SSRF fix. Change HTTP version from 1.1 to 0.9 and remove the host header completely. On HTTP/0.9 there is no need for a host header.
 </details>
 
+<details>
+  <summary>[SQLi](https://github.com/Kahvi-0/Vulnerabilities-and-Exploitations/blob/master/Web/SQL%20Injection.md)</summary>
+  <br>
+  SQL statements begin with verbs.
+ - Common SQL verbs:
+        - SELECT
+        - INSET
+        - DELETE
+        - UPDATE
+        - DROP
+        - UNION
+   
+   - Terms:
+        - WHERE - Filters records based on specific condition
+        - AND/OR/NOT - Filter records based on multiple condtions
+        - ORDER BY - Sorts records in ascending/descending order
+        
+   - Special characters:
+        - ' and " - string delimeters
+        - -- , /* and #  - Comment delimiters
+        - * and %  - wildcards
+        - ; - ends SQL statement
+        - Others that follow programmatic logic - = , + , > , < , () , etc
+        
+   Example:
+   
+    <verb> <* or column> FROM <Table name> <Term / Condition>  
+   
+</details>
+
 
 <details>
   <summary></summary>
