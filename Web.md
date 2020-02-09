@@ -17,9 +17,11 @@
    - Type of underlysing software? 
    - Versions?
   
-  ## Vulnerability scanning
+  ## Vulnerability/misconfiguration scanning
   
    - Nikto 
+   
+   - [Header scanning](https://securityheaders.com/)
 
   
   [Visual site mapper](http://www.visualsitemapper.com/)
@@ -98,6 +100,37 @@
 </details>
 
 -----------------------------------------------------------------------------
+<details>
+  <summary>[SQLi](https://github.com/Kahvi-0/Vulnerabilities-and-Exploitations/blob/master/Web/SQL%20Injection.md)</summary>
+  <br>
+  [Injection](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A1-Injection)
+  
+  SQL statements begin with verbs.
+ - Common SQL verbs:
+        - SELECT
+        - INSET
+        - DELETE
+        - UPDATE
+        - DROP
+        - UNION
+   
+   - Terms:
+        - WHERE - Filters records based on specific condition
+        - AND/OR/NOT - Filter records based on multiple condtions
+        - ORDER BY - Sorts records in ascending/descending order
+        
+   - Special characters:
+        - ' and " - string delimeters
+        - -- , /* and #  - Comment delimiters
+        - * and %  - wildcards
+        - ; - ends SQL statement
+        - Others that follow programmatic logic - = , + , > , < , () , etc
+        
+   Example:
+   
+    <verb> <* or column> FROM <Table name> <Term / Condition>  
+   
+</details>
 
 <details>
   <summary>Broken Authentication</summary>
@@ -136,32 +169,124 @@
    - Not in a dir accessable to anyone
    
    - Not Encrypted sensitive data if accessible
+   
+   - Are appropriate headers applie so attacks against a session cannot occur? Mitm/downgrade/etc
+      - [Header scanning](https://securityheaders.com/)
+      
+   - Does it support new/degraded encryption. 
+       
+         nmap --script=ssl-enum-ciphers -p 443 <URL>
+</details>
 
+
+<details>
+  <summary>XXE</summary>
+  <br>
+   
+   [XML External Entities](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A4-XML_External_Entities_(XXE))
+   
+   Many older or poorly configured XML processors evaluate external entity references within XML documents. External entities can be used to disclose internal files using the file URI handler, internal file shares, internal port scanning, remote code execution, and denial of service attacks. An XML entity is like a variable that you can call into the page later. On the page you care only able to use alphanumeraic characters for strings, however you can call in an entity that contains special characters. You will notice the SYSTEM key word to let the parser know that the resource is external, i.e can pull data from the system. 
+   
+   [XXE Payloads](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XXE%20Injection)
+   
+  
 </details>
 
 <details>
-  <summary>403 restrictions bypass</summary>
+  <summary>Broken Access Control</summary>
   <br>
+  
+  [Broken Access Controls](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A5-Broken_Access_Control)
+  
+  Restrictions on what authenticated users are allowed to do are often not properly enforced. Attackers can exploit these flaws to access unauthorized functionality and/or data, such as access other users’ accounts, view sensitive files, modify other users’ data, change access rights, etc
+
+
+   - Look for client side code that handle data incorrectly
+       - Hidden fields that have password/ UID data that can be minipulated
+       - Cookies that improperly control access (i.e IsAdmin cookie)
+       - 
    
-   Try other HTTP methods
+   <details>
+    <summary>403 restrictions bypass</summary>
+     <br>
    
-   Try headers:
+     Try other HTTP methods
    
-     X-Original-URL: <path>
+       Try headers:
+   
+       X-Original-URL: <path>
      
-     X-Rewrite-URL: <path>
+       X-Rewrite-URL: <path>
    
+   </details>
+</details>
+
+
+<details>
+  <summary>Security Misconfiguration</summary>
+  <br>
+
+   [Security Misconfiguration](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A6-Security_Misconfiguration)
+   
+   Security misconfiguration is the most commonly seen issue. This is commonly a result of insecure default configurations, incomplete or ad hoc configurations, open cloud storage, misconfigured HTTP headers, and verbose error messages containing sensitive information. Not only must all operating systems, frameworks, libraries, and applications be securely configured, but they must be patched/upgraded in a timely fashion.
 </details>
 
 
 <details>
   <summary>XSS</summary>
   <br>
-  Cheatsheet:
+   [XXS](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A7-Cross-Site_Scripting_(XSS)) 
+    
+   [Portswigger Cheatsheet](https://portswigger.net/web-security/cross-site-scripting/cheat-sheet)
    
-   [Portswigger](https://portswigger.net/web-security/cross-site-scripting/cheat-sheet)
-
+   XSS flaws occur whenever an application includes untrusted data in a new web page without proper validation or escaping, or updates an existing web page with user-supplied data using a browser API that can create HTML or JavaScript. XSS allows attackers to execute scripts in the victim’s browser which can hijack user sessions, deface web sites, or redirect the user to malicious sites. Note that reflected and DOM based XSS require social engineering. 
+   
+  [Payloads](https://github.com/pgaijin66/XSS-Payloads/blob/master/payload.txt)
+   
+   Blacklist bypassing:
+    
+     - Pay around with what is beng removed with input is entered. 
+     
+      + 
+      
+      <<  >> /
+      
+      Uppercase/lowercase
+      
+      encoding
+   
 </details>
+
+<details>
+  <summary>Insecure Deserialization</summary>
+  <br>
+   
+   [Insecure Deserialization](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A8-Insecure_Deserialization)
+   
+   Taking data that is serialized (taking data, and converting it to a different format), and deserializing it. Insecure deserialization often leads to remote code execution. Even if deserialization flaws do not result in remote code execution, they can be used to perform attacks, including replay attacks, injection attacks, and privilege escalation attacks. 
+   
+   https://github.com/frohoff/ysoserial
+   
+</details>
+
+<details>
+  <summary>Using Components with Known Vulnerabilities</summary>
+  <br>
+   
+   [Using Components with Known Vulnerabilities](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities)
+   
+   Components, such as libraries, frameworks, and other software modules, run with the same privileges as the application. If a vulnerable component is exploited, such an attack can facilitate serious data loss or server takeover. Applications and APIs using components with known vulnerabilities may undermine application defenses and enable various attacks and impacts. Look for CVE or known vulnerabilities with software versions the target is running.
+</details>
+
+<details>
+  <summary>Insufficient Logging&Monitoring</summary>
+  <br>
+   
+   [Insufficient Logging&Monitoring](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A10-Insufficient_Logging%252526Monitoring)
+   
+ Insufficient logging and monitoring, coupled with missing or ineffective integration with incident response, allows attackers to further attack systems, maintain persistence, pivot to more systems, and tamper, extract, or destroy data. Most breach studies show time to detect a breach is over 200 days, typically detected by external parties rather than internal processes or monitoring.
+</details>
+
 
 <details>
   <summary>Parameters</summary>
@@ -207,10 +332,6 @@
     .php (1).png
     
    ## Editing upload request 
-   
-   
- 
-  
 </details>
 
 
@@ -228,8 +349,6 @@
   Client side:
   
     - window.location how is it checked? 
-    
-    
 </details>
 
 <details>
@@ -401,35 +520,6 @@
   - Bypass SSRF fix. Change HTTP version from 1.1 to 0.9 and remove the host header completely. On HTTP/0.9 there is no need for a host header.
 </details>
 
-<details>
-  <summary>[SQLi](https://github.com/Kahvi-0/Vulnerabilities-and-Exploitations/blob/master/Web/SQL%20Injection.md)</summary>
-  <br>
-  SQL statements begin with verbs.
- - Common SQL verbs:
-        - SELECT
-        - INSET
-        - DELETE
-        - UPDATE
-        - DROP
-        - UNION
-   
-   - Terms:
-        - WHERE - Filters records based on specific condition
-        - AND/OR/NOT - Filter records based on multiple condtions
-        - ORDER BY - Sorts records in ascending/descending order
-        
-   - Special characters:
-        - ' and " - string delimeters
-        - -- , /* and #  - Comment delimiters
-        - * and %  - wildcards
-        - ; - ends SQL statement
-        - Others that follow programmatic logic - = , + , > , < , () , etc
-        
-   Example:
-   
-    <verb> <* or column> FROM <Table name> <Term / Condition>  
-   
-</details>
 
 
 <details>
