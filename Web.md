@@ -100,8 +100,9 @@
 </details>
 
 -----------------------------------------------------------------------------
+
 <details>
-  <summary>[SQLi](https://github.com/Kahvi-0/Vulnerabilities-and-Exploitations/blob/master/Web/SQL%20Injection.md)</summary>
+  <summary>SQLi</summary>
   <br>
   [Injection](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A1-Injection)
   
@@ -128,9 +129,9 @@
         
    Example:
    
-    <verb> <* or column> FROM <Table name> <Term / Condition>  
-   
+        <verb> <* or column> FROM <Table name> <Term / Condition>  
 </details>
+
 
 <details>
   <summary>Broken Authentication</summary>
