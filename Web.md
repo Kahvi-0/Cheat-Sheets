@@ -1,6 +1,12 @@
 
 # Methodology // Exploitation Cheatsheet
 
+[OWASP Top 10](https://www.owasp.org/images/7/72/OWASP_Top_10-2017_%28en%29.pdf.pdf)
+
+[OWASP checklist](https://github.com/tanprathan/OWASP-Testing-Checklist)
+
+  - Follow along with [OWASP release 4.0](https://www.owasp.org/images/1/19/OTGv4.pdf) for each section
+
 <details>
   <summary>Enumeration</summary>
   <br>
@@ -92,6 +98,46 @@
 </details>
 
 -----------------------------------------------------------------------------
+
+<details>
+  <summary>Broken Authentication</summary>
+  <br>
+   
+   [Broken Authentication](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A2-Broken_Authentication)
+
+   Application functions related to authentication and session management are often implemented incorrectly, allowing attackers to compromise passwords, keys, or session tokens, or to exploit other implementation flaws to assume other users’ identities temporarily or permanently.
+   
+    - Testing login/password recovery error for username enumeration
+    
+    - Session fixation
+        - How are session IDs handled? In URL or cookie? Are they encrypted/handled properly?
+        - Does logging out revoke the cookie? Immediatly?
+        - Is there a timeout on the session cookie?
+
+</details>
+
+
+<details>
+  <summary>Sensitive Data Exposure</summary>
+  <br>
+   
+ [Sensitive Data Exposure](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A3-Sensitive_Data_Exposure)
+ 
+ Many web applications and APIs do not properly protect sensitive data, such as financial, healthcare, and PII. Attackers may steal or modify such weakly protected data to conduct credit card fraud, identity theft, or other crimes. Sensitive data may be compromised without extra protection, such as encryption at rest or in transit, and requires special precautions when exchanged with the browser.
+ 
+   - Stored credentials in site/site scripts
+   
+   - Backup directories
+   
+   - Dev directories
+   
+   - Internal data
+   
+   - Not in a dir accessable to anyone
+   
+   - Not Encrypted sensitive data if accessible
+
+</details>
 
 <details>
   <summary>403 restrictions bypass</summary>
