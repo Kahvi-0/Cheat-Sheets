@@ -24,7 +24,27 @@
   
   - Sublist3r (scraping)
   - SubFinder-o
+  - [assetfinder](https://github.com/tomnomnom/assetfinder)
+   
+        assetfinder <domain.TLD>
+        
+         By default will also find related assets that may not be in the searched domain.
+        
+          --subs-only   #will only find subdomains
+   
+  - AMass
   
+  - [gowitness](https://github.com/sensepost/gowitness)
+  
+     Takes screenshots of websites
+  
+  - [httprobe](https://github.com/tomnomnom/httprobe)
+  
+      Will check if subdomains responds
+ 
+  - [waybackurls](go get github.com/tomnomnom/waybackurls)
+  
+      Checks URLs against the wayback machine
   
   ## Directory discovery
   
