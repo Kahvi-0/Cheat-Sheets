@@ -324,13 +324,16 @@
   
   Payloads: 
   
-   ## change extension
+   ## manual testing bypass
     
     .PhP .php3 .php5
     
     .php00.png
     
     .php (1).png
+  
+  ## Use Burp intruder against the wordlist inder /usr/share/wordlists/dirb/
+    
     
    ## Editing upload request 
 </details>
