@@ -13,9 +13,10 @@
   
   ## Content discovery
   
-   - What is the server running on?
-   - Type of underlysing software? 
-   - Versions?
+   - What is the server running on/versions?
+    - Wappalyzer 
+    - Response headers
+    - Inspect source
   
   ## Vulnerability/misconfiguration scanning
   
@@ -57,14 +58,13 @@
   ## Directory discovery
   
   - dirbuster
+  
+  Also add file extensions related to underlysing software.
 
  Wordlists
  
     /usr/share/wordlists/dirb/
     /usr/share/wordlists/dirbuster/
-
-
-
 </details>
 
 <details>
