@@ -118,6 +118,9 @@
 <details>
   <summary>SQLi</summary>
   <br>
+  
+  [SQL Syntax](https://www.w3schools.com/sql/sql_intro.asp) 
+  
   [Injection](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A1-Injection)
   
   SQL statements begin with verbs.
@@ -143,7 +146,7 @@
         
    Example:
    
-        <verb> <* or column> FROM <Table name> <Term / Condition>  
+        <verb> <* or column> FROM <Table name> WHERE <Term / Condition> 
 </details>
 
 
@@ -250,7 +253,7 @@
 <details>
   <summary>XSS</summary>
   <br>
-   [XXS](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A7-Cross-Site_Scripting_(XSS)) 
+   [XSS](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A7-Cross-Site_Scripting_(XSS)) 
     
    [Portswigger Cheatsheet](https://portswigger.net/web-security/cross-site-scripting/cheat-sheet)
    
