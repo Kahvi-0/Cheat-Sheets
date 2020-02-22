@@ -78,27 +78,38 @@
   
 </details>
 
-
 <details>
-  <summary>Possible bug leads</summary>
+  <summaryHTTP version syntax</summary>
   <br>
   
-  **Check Burps passive scanner to see if anything sticks out.**
+  **HTTP/1.0** 
+   
+      GET <resource> HTTP/1.0
+      
+  **HTTP/1.1** 
+   
+      GET <resource> HTTP/1.0
+      Host: <domain>.<tld>
   
-  **Login page**
-    Injection possible?
-    Type of DB?
+</details>
+
+
+<details>
+  <summary>Exploiting Misconfigured HTTP Verbs</summary>
+  <br>
   
-  **User input/ input that stays on page**
+  **DELETE** 
+   
+        DELETE  <resource> HTTP/1.0
+        
+  **PUT**
   
-  **Cookies**
-  
-  **Ability to upload files**
-  
-  **URL tells**
-  
-  **40X unauthorized pages**
-    Verb tampering
+        PUT /<filename for upload> HTTP/1.0 
+        Content-type: text/html
+        Content-length: <size of upload. Burp will auto count>
+        
+        
+        <script>
   
 </details>
 
@@ -112,7 +123,7 @@
   SQL statements begin with verbs.
  - Common SQL verbs:
         - SELECT
-        - INSET
+        - INSERT
         - DELETE
         - UPDATE
         - DROP
