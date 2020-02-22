@@ -17,6 +17,9 @@
     - Wappalyzer 
     - Response headers
     - Inspect source
+    - Fingerprint server
+    
+          httprint -P0 -h <IP> -s /usr/share/httprint/<signature file>
   
   ## Vulnerability/misconfiguration scanning
   
