@@ -60,10 +60,10 @@
   
   ## Directory discovery
   
-  - dirbuster
+  - gobuster 
+      
+        gobuster dir -u <URL> -w <wordlist> -e <extensions>
   
-  Also add file extensions related to underlysing software.
-
  Wordlists
  
     /usr/share/wordlists/dirb/
