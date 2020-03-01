@@ -62,7 +62,14 @@
   
   - gobuster 
       
-        gobuster dir -u <URL> -w <wordlist> -e <extensions>
+        gobuster dir -u <URL> -w <wordlist>
+        
+         -e <extensions>
+         
+          -P string
+                 Password for Basic Auth (dir mode only)
+          -U string
+                 Username for Basic Auth (dir mode only)
   
  Wordlists
  
