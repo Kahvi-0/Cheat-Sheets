@@ -198,9 +198,15 @@
  
    [Cheatsheet 1](https://gist.github.com/jkullick/03b98b1e44f03986c5d1fc69c092220d)
    
-   Identify injection
+   sqlmap with GET request
    
      sqlmap -u <url><resource>?id=1 -p id
+     
+   sqlmap with POST request
+   
+     use Burp to save the injectable request to a text file
+     
+     sqlmap -r POSTrequest.txt -p <injectable parameter>
      
    Get tables
      
