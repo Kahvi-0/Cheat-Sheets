@@ -64,11 +64,13 @@
       
         gobuster dir -u <URL> -w <wordlist>
         
+         -c <cookie> specify cookie
+        
          -e <extensions>
          
-          -P string
+         -P string
                  Password for Basic Auth (dir mode only)
-          -U string
+         -U string
                  Username for Basic Auth (dir mode only)
   
  Wordlists
