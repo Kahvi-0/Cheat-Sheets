@@ -25,6 +25,8 @@
   
    - Nikto 
    
+     with credentials  -id <user>:<pass>
+   
    - [Header scanning](https://securityheaders.com/)
 
   
