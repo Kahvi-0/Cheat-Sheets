@@ -185,21 +185,30 @@
        
   **Union based**
   
-   For if output is directly displayed on the output page. To exploit a SQL injection, you first need to know how many fields the vulnerable query selects. Which is done by trial and error.
+   For if output is directly displayed on the output page. To exploit a SQL injection, you first need to know how many fields the vulnerable query selects. Which is done by trial and error. 
    
     ' UNION SELECT null; --
-    ' UNION SELECT null, null; --
+    ' UNION SELECT null,null; --
     
    Example: 
      
-    '))-- UNION SELECT 1,2,3,4,5,6,7,8,<payload>
+    ')) UNION SELECT 1,2,3,4,5,6,7,<payload> --
      
-      payloads: 
-      
-        <SQL version>_version()--
-        <table name>
 
   Each null represents a field. Usually an SQL error page will represnt that we have the wrong number of fields. An SQL "false" (try to determine this once an SQLi has been discovered, i.e paramter image=<sql>, true=image loads, false=broken image) condition will represent that we have guessed the correct total of fields (do one extra just in case). 
+  
+  If you want to exploit this manually, the request needs to line up with the number of fields that are found to exist. 
+  
+  For example if I am injecting a URL parameter and found that there are 8 fields, the SQLi would look similar to this: 
+    
+         URL?query=')) UNION SELECT 1,2,3,4,5,6,7,8 --
+         
+   If I wanted to get the email and password field using this SQLi it would look like this:
+   
+         URL?query=')) UNION SELECT 1,2,3,4,5,6,email,password from Users--
+         
+   See how the email and password file replace 7 and 8 then asks from the Users table.
+
   
    Other payloads:
    
