@@ -160,7 +160,6 @@
      - GET parameters
     
         Note on comments for GET requests: not just two dashes and a space, also add a third dash. Because most of the browsers automatically remove trailing spaces in the URL so, if you need to inject a comment via a GET request, you have to add a character after the trailing space of the comment i.e. -- -
-
      
      - POST parameters
      - HTTP Headers
@@ -174,6 +173,7 @@
      •String terminators: 'and "
      •SQL commands: SELECT, UNION, and others
      •SQLcomments:#or--
+     • Closing off '))-- for URL parameters. Then try to move to a UNION SELECT
      
       **Exploit**
          
@@ -189,6 +189,15 @@
    
     ' UNION SELECT null; --
     ' UNION SELECT null, null; --
+    
+   Example: 
+     
+    '))-- UNION SELECT 1,2,3,4,5,6,7,8,<payload>
+     
+      payloads: 
+      
+        <SQL version>_version()--
+        <table name>
 
   Each null represents a field. Usually an SQL error page will represnt that we have the wrong number of fields. An SQL "false" (try to determine this once an SQLi has been discovered, i.e paramter image=<sql>, true=image loads, false=broken image) condition will represent that we have guessed the correct total of fields (do one extra just in case). 
   
