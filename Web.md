@@ -1,11 +1,32 @@
 
 # Methodology // Exploitation Cheatsheet
 
-[OWASP Top 10](https://www.owasp.org/images/7/72/OWASP_Top_10-2017_%28en%29.pdf.pdf)
+#
+#
 
-[OWASP checklist](https://github.com/tanprathan/OWASP-Testing-Checklist)
+<details>
+  <summary>Methodology</summary>
+  <br>
+    
+  - Have a crawler going against the site
+  
+  - Have gobuster running
+  
+  - Walk through the site manually and understand it's use
+  
+  - Note user input sections, URL parameters, etc. Anything interesting
+
+  
+  [OWASP Top 10](https://www.owasp.org/images/7/72/OWASP_Top_10-2017_%28en%29.pdf.pdf)
+
+  [OWASP checklist](https://github.com/tanprathan/OWASP-Testing-Checklist)
 
   - Follow along with [OWASP release 4.0](https://www.owasp.org/images/1/19/OTGv4.pdf) for each section
+  
+  
+  
+</details>
+#
 
 <details>
   <summary>Enumeration</summary>
@@ -127,6 +148,10 @@
 -----------------------------------------------------------------------------
 
 <details>
+  <summary>Injection</summary>
+  <br>
+<details>
+  
   <summary>SQLi</summary>
   <br>
   
@@ -243,6 +268,12 @@
         <verb> <* or column> FROM <Table name> WHERE <Term / Condition> 
 </details>
 
+<details>
+  <summary>Command injection</summary>
+  <br>
+
+</details>
+</details>
 
 <details>
   <summary>Broken Authentication</summary>
@@ -254,10 +285,14 @@
    
     - Testing login/password recovery error for username enumeration
     
+    - Weak creds. Site allowing username as password.
+    
     - Session fixation
         - How are session IDs handled? In URL or cookie? Are they encrypted/handled properly?
         - Does logging out revoke the cookie? Immediatly?
         - Is there a timeout on the session cookie?
+        
+        
 
 </details>
 
