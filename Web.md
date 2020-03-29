@@ -246,13 +246,15 @@
      
      user() gets user running SQL
      
- SQLMap once vectors have been identified: 
+ **SQLMap** once vectors have been identified: 
  
    [Cheatsheet 1](https://gist.github.com/jkullick/03b98b1e44f03986c5d1fc69c092220d)
    
    sqlmap with GET request
    
      sqlmap -u <url><resource>?id=1 -p id
+     
+      --cookie="<cookie>"
      
    sqlmap with POST request
    
