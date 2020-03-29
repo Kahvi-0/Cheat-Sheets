@@ -10,6 +10,20 @@
   <summary>Methodology</summary>
   <br>
     
+   # Enumeration
+    
+   ## Content discovery
+  
+   - What is the server running on/versions?
+    - Wappalyzer
+    - Response headers
+    - Inspect source
+    - Fingerprint server
+    
+          httprint -P0 -h <IP> -s /usr/share/httprint/<signature file>
+          
+   ## Scanning 
+  
   - Have a BURP audit and crawler going against the site
  
   - Nikto scan 
@@ -27,53 +41,26 @@
   
   - Have gobuster running
   
-  - Walk through the site manually and understand it's use
-  
-  - Note user input sections, URL parameters, etc. Anything interesting
+           
+        gobuster dir -u <URL> -w <wordlist>
 
-  
-  [OWASP Top 10](https://www.owasp.org/images/7/72/OWASP_Top_10-2017_%28en%29.pdf.pdf)
+         -c <cookie> specify cookie
 
-  [OWASP checklist](https://github.com/tanprathan/OWASP-Testing-Checklist)
+         -e <extensions>
 
-  - Follow along with [OWASP release 4.0](https://www.owasp.org/images/1/19/OTGv4.pdf) for each section
+         -P string
+                 Password for Basic Auth (dir mode only)
+         -U string
+                 Username for Basic Auth (dir mode only)
   
   
-  
-</details>
+  - [Header scanning](https://securityheaders.com/)
 
------------------------------------------------------------------------------
-
-#
-
-<details>
-  <summary>Enumeration</summary>
-  <br>
+  - [Visual site mapper](http://www.visualsitemapper.com/)
   
-  ## Content discovery
+  ## If the site requires OSINT
   
-   - What is the server running on/versions?
-    - Wappalyzer 
-    - Response headers
-    - Inspect source
-    - Fingerprint server
-    
-          httprint -P0 -h <IP> -s /usr/share/httprint/<signature file>
-  
-  ## Vulnerability/misconfiguration scanning
-  
-   - Nikto 
-   
-     with credentials  -id <user>:<pass>
-   
-   - [Header scanning](https://securityheaders.com/)
-
-  
-  [Visual site mapper](http://www.visualsitemapper.com/)
-  
-  Wappalyzer extension for server/web app details
-  
-  ## Subdomain discovery
+   ### Subdomain discovery
   
   - Sublist3r (scraping)
   - SubFinder-o
@@ -99,37 +86,30 @@
   
       Checks URLs against the wayback machine
   
-  ## Directory discovery
+  ## touching while scans run
   
-  - gobuster 
-      
-        gobuster dir -u <URL> -w <wordlist>
-        
-         -c <cookie> specify cookie
-        
-         -e <extensions>
-         
-         -P string
-                 Password for Basic Auth (dir mode only)
-         -U string
-                 Username for Basic Auth (dir mode only)
-  
- Wordlists
+  - Walk through the site manually and understand it's use
+    
+  - Note user input sections, URL parameters, etc. Anything interesting
  
-    /usr/share/wordlists/dirb/
-    /usr/share/wordlists/dirbuster/
-</details>
+  ## Testing
+  
+  [OWASP Top 10](https://www.owasp.org/images/7/72/OWASP_Top_10-2017_%28en%29.pdf.pdf)
 
-<details>
-<summary>Learning the application</summary>
-  While running Burp, run through the site.
-  How is everything handled? (pages, files, auth)
-  What is the application for? (Photo storage, blog, store)
+  [OWASP checklist](https://github.com/tanprathan/OWASP-Testing-Checklist)
+
+  - Follow along with [OWASP release 4.0](https://www.owasp.org/images/1/19/OTGv4.pdf) for each section
+  
+  
   
 </details>
 
+-----------------------------------------------------------------------------
+
+
+
 <details>
-  <summaryHTTP version syntax</summary>
+  <summary>HTTP version syntax</summary>
   <br>
   
   **HTTP/1.0** 
