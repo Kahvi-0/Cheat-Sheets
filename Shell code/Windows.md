@@ -6,8 +6,3 @@
 
 
 
-# Upgrading shells
-
-From shell to meterpreter
-
-    /exploit/multi/script/web_delivery
