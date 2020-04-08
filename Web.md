@@ -106,7 +106,25 @@
 
 -----------------------------------------------------------------------------
 
+<details>
+  <summary>Extracting info from scripts</summary>
+  <br>
 
+**Gathering all scripts from a site after a full walk through and scan has been performed with burp running**
+
+  - In the target tab right click the url -> Engagement tools -> Find scripts
+  
+  - Click export. Click save to file.
+  
+  Run this against the following: 
+  
+  - [Ralative URL extractor](https://github.com/jobertabma/relative-url-extractor)
+  
+        wget https://raw.githubusercontent.com/jobertabma/relative-url-extractor/master/extract.rb && chmod -x extract.rb
+        
+        ruby extract.rb <file>
+
+</details>
 
 <details>
   <summary>HTTP version syntax</summary>
