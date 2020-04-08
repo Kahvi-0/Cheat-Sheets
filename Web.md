@@ -82,11 +82,11 @@
   
       Will check if subdomains responds
  
-  - [waybackurls](go get github.com/tomnomnom/waybackurls)
+  - [waybackurls](github.com/tomnomnom/waybackurls)
   
       Checks URLs against the wayback machine
   
-  ## touching while scans run
+  ## Walking through the service
   
   - Walk through the site manually and understand it's use
     
@@ -94,7 +94,7 @@
  
   ## Testing
   
-  [OWASP Top 10](https://www.owasp.org/images/7/72/OWASP_Top_10-2017_%28en%29.pdf.pdf)
+  [OWASP Top 10](https://owasp.org/www-project-top-ten/)
 
   [OWASP checklist](https://github.com/tanprathan/OWASP-Testing-Checklist)
 
