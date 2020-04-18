@@ -703,6 +703,16 @@
 </details>
 
 
+<details>
+  <summary>LFI</summary>
+  <br>
+  
+  Cheatsheets: 
+  
+   [PayloadAllTheThings](https://github.com/cyberheartmi9/PayloadsAllTheThings/tree/master/File%20Inclusion%20-%20Path%20Traversal#basic-lfi-null-byte-double-encoding-and-other-tricks)
+   
+</details>
+
 
 <details>
   <summary></summary>
