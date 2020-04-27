@@ -82,7 +82,7 @@
   
       Will check if subdomains responds
  
-  - [waybackurls](github.com/tomnomnom/waybackurls)
+  - [waybackurls](https://github.com/tomnomnom/waybackurls)
   
       Checks URLs against the wayback machine
   
@@ -118,11 +118,11 @@
   
   Run this against the following: 
   
-  - [Ralative URL extractor](https://github.com/jobertabma/relative-url-extractor)
+  - [Web script info extractor](https://github.com/Kahvi-0/Tools-and-Concepts/blob/master/Toolbox/extract.py)
   
-        wget https://raw.githubusercontent.com/jobertabma/relative-url-extractor/master/extract.rb && chmod -x extract.rb
+        wget https://raw.githubusercontent.com/Kahvi-0/Tools-and-Concepts/master/Toolbox/extract.py && chmod -x extract.py
         
-        ruby extract.rb <file>
+        ./extract.py <file>
 
 </details>
 
