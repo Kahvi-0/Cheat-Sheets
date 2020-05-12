@@ -4,9 +4,7 @@
 
 ## Upgrade simple shell to tty
 
-**Python method**
-
-    python -c 'import pty;pty.spawn("/bin/bash")';
+https://netsec.ws/?p=337
 
 **socat method**
 
