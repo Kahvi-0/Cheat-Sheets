@@ -9,3 +9,8 @@
 - sessions -u <session #>
 
 - /exploit/multi/script/web_delivery
+
+
+**Delivering a meterpreter shell**
+
+    exploit/multi/script/web_delivery
