@@ -1,18 +1,1 @@
-## Recon
-
-
-## Attacking
-
-- [Windows](https://github.com/Kahvi-0/Cheat-Sheets/tree/master/Attacking/Windows)
-
-- Linux
-
-
-## Post exploitation
-
-- [Windows](https://github.com/Kahvi-0/Cheat-Sheets/tree/master/Post%20exploitation/Windows)
-
-- [Linux](https://github.com/Kahvi-0/Cheat-Sheets/tree/master/Post%20exploitation/Linux)
-
-
-
+## Updated notes and sheets will be in better format on [my gitbook](https://app.gitbook.com/@ryan-dehaas/s/pentesting-cheat-sheet/~/drafts/-M7_4kEVRS0Xg1maHAOe/exploitation/buffer-overflow)
