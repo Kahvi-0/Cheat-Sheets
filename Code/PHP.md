@@ -1,3 +1,0 @@
-# PHP
-
-    system("<system code>")
