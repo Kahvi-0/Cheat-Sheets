@@ -303,6 +303,10 @@
 Command Injection occurs when server-side code (like PHP) in a web application makes a system call on the hosting machine.  It is a web vulnerability that allows an attacker to take advantage of that made system call to execute operating system commands on the server.  Sometimes this won't always end in something malicious, like a whoami or just reading of files.  That isn't too bad.  But the thing about command injection is it opens up many options for the attacker.  The worst thing they could do would be to spawn a reverse shell to become the user that the web server is running as.  A simple ;nc -e /bin/bash is all that's needed and they own your server. some variants of netcat don't support the -e option.  
 
 Once the attacker has a foothold on the web server, they can start the usual enumeration of your systems and start looking for ways to pivot around.  Now that we know what command injection is, we'll start going into the different types and how to test for them.
+
+Active command injection occurs when you can see the response from the system call.
+
+For example: the function [passthru()](https://www.php.net/manual/en/function.passthru.php) is actually whats passing the input to the system with PHP.
 </details>
 
 #
