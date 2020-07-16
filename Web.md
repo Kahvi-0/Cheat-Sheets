@@ -341,7 +341,7 @@ For example: the function [passthru()](https://www.php.net/manual/en/function.pa
    
  [Sensitive Data Exposure](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A3-Sensitive_Data_Exposure)
  
- Many web applications and APIs do not properly protect sensitive data, such as financial, healthcare, and PII. Attackers may steal or modify such weakly protected data to conduct credit card fraud, identity theft, or other crimes. Sensitive data may be compromised without extra protection, such as encryption at rest or in transit, and requires special precautions when exchanged with the browser.
+ Many web applications and APIs do not properly protect sensitive data, such as financial, healthcare, and PII. Attackers may steal or modify such weakly protected data to conduct credit card fraud, identity theft, or other crimes. Sensitive data may be compromised without extra protection, such as encryption at rest or in transit, and requires special precautions when exchanged with the browser. At more complex levels this often involves techniques such as a "Man in The Middle Attack", whereby the attacker would force user connections through a device which they control, then take advantage of weak encryption on any transmitted data to gain access to the intercepted information (if the data is even encrypted in the first place). The most common way to store a large amount of data in a format that is easily accessible from many locations at once is in a database.
  
    - Stored credentials in site/site scripts
    
@@ -361,6 +361,9 @@ For example: the function [passthru()](https://www.php.net/manual/en/function.pa
    - Does it support new/degraded encryption. 
        
          nmap --script=ssl-enum-ciphers -p 443 <URL>
+         
+   Flat-file DB: In a production environment it is common to see databases set up on dedicated servers, running a database service such as MySQL or MariaDB; however, databases can also be stored as files, referred to as "flat-file" databases, as they are stored as a single file on the computer. This is much easier than setting up a full database server, and so could potentially be seen in smaller web applications. What happens if the database is stored underneath the root directory of the website? It can be downloaded and queired on our own machine, with full access to everything in the database. 
+    
 </details>
 
 
