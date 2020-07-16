@@ -371,12 +371,87 @@ For example: the function [passthru()](https://www.php.net/manual/en/function.pa
   <summary>XXE</summary>
   <br>
    
+  **What is XML?**
+
+XML (eXtensible Markup Language) is a markup language that defines a set of rules for encoding documents in a format that is both human-readable and machine-readable. It is a markup language used for storing and transporting data. 
+
+ **Why we use XML?**
+
+1. XML is platform-independent and programming language independent, thus it can be used on any system and supports the technology change when that happens.
+
+2. The data stored and transported using XML can be changed at any point in time without affecting the data presentation.
+
+3. XML allows validation using DTD and Schema. This validation ensures that the XML document is free from any syntax error.
+
+4. XML simplifies data sharing between various systems because of its platform-independent nature. XML data doesn’t require any conversion when transferred between different systems.
+
+  **Syntax**
+
+Every XML document mostly starts with what is known as XML Prolog.
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+Every XML document must contain a `ROOT` element.
+
+Example:
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <mail>
+       <to>falcon</to>
+       <from>feast</from>
+       <subject>About XXE</subject>
+       <text>Teach about XXE</text>
+    </mail>
+
+mail is the root element.. The rest are the children elements.
+
+Above the line is called XML prolog and it specifies the XML version and the encoding used in the XML document. This line is not compulsory to use but it is considered a `good practice` to put that line in all your XML documents.
+
+
+**DTD**
+   DTD stands for Document Type Definition. A DTD defines the structure and the legal elements and attributes of an XML document.
+   
+   Take note.dtd as an example containing: 
+   
+     <!DOCTYPE note [ <!ELEMENT note (to,from,heading,body)> <!ELEMENT to (#PCDATA)> <!ELEMENT from (#PCDATA)> <!ELEMENT heading (#PCDATA)> <!ELEMENT body (#PCDATA)> ]>
+     
+     !DOCTYPE note  defines a root element of the document names note.
+     The !ELEMENT here is used to define which elements are type #PCDATA ( in this case all of them) 
+     !ELEMENT note defines the note element must contain the elements listed right after. 
+     
+   In the XML document uses note.dtd:
+   
+       <?xml version="1.0" encoding="UTF-8"?>
+       <!DOCTYPE note SYSTEM "note.dtd">
+       <note>
+          <to>falcon</to>
+          <from>feast</from>
+          <heading>hacking</heading>
+          <body>XXE attack</body>
+        </note>
+   
+   
    [XML External Entities](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A4-XML_External_Entities_(XXE))
    
    Many older or poorly configured XML processors evaluate external entity references within XML documents. External entities can be used to disclose internal files using the file URI handler, internal file shares, internal port scanning, remote code execution, and denial of service attacks. An XML entity is like a variable that you can call into the page later. On the page you care only able to use alphanumeraic characters for strings, however you can call in an entity that contains special characters. You will notice the SYSTEM key word to let the parser know that the resource is external, i.e can pull data from the system. 
    
+   An XML External Entity (XXE) attack is a vulnerability that abuses features of XML parsers/data. It often allows an attacker to interact with any backend or external systems that the application itself can access and can allow the attacker to read the file on that system. They can also cause Denial of Service (DoS) attack or could use XXE to perform Server-Side Request Forgery (SSRF) inducing the web application to make requests to other applications. XXE may even enable port scanning and lead to remote code execution.
+   
+   
+   There are two types of XXE attacks: in-band and out-of-band (OOB-XXE).
+   
+1) An in-band XXE attack is the one in which the attacker can receive an immediate response to the XXE payload.
+
+2) out-of-band XXE attacks (also called blind XXE), there is no immediate response from the web application and attacker has to reflect the output of their XXE payload to some other file or their own server.
+
    [XXE Payloads](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XXE%20Injection)
    
+   Example payload: 
+   
+        <?xml version="1.0"?>
+        <!DOCTYPE root [<!ENTITY read SYSTEM 'file:///etc/passwd'>]>
+        <root>&read;</root>
+   defining an ENTITY with the name read and setting it value to `SYSTEM` and path of the file.
   
 </details>
 
