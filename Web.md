@@ -528,7 +528,29 @@ Above the line is called XML prolog and it specifies the XML version and the enc
    
    [Insecure Deserialization](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A8-Insecure_Deserialization)
    
+   Serialisation is the process of converting objects used in programming into simpler, compatible formatting for transmitting between systems or networks for further processing or storage.
+
+Alternatively, deserialisation is the reverse of this; converting serialised information into their complex form - an object that the application will understand.
+
+Examples:
+  
+   - Ip address in a packet being turned into binary then back into digits once its at its desitnation
+   - Cookies
+
+   
    Taking data that is serialized (taking data, and converting it to a different format), and deserializing it. Insecure deserialization often leads to remote code execution. Even if deserialization flaws do not result in remote code execution, they can be used to perform attacks, including replay attacks, injection attacks, and privilege escalation attacks. 
+   
+   At summary, ultimately, any application that stores or fetches data where there are no validations or integrity checks in place for the data queried or retained.
+   
+   A prominent element of object-oriented programming (OOP), objects are made up of two things:
+- State
+- Behaviour
+
+Simply, objects allow you to create similar lines of code without having to do the leg-work of write all lines of code.
+
+For example, a lamp would be a good object. Lamps can have different types of bulbs, this would be their state, as well as being either on/off - their behaviour!
+
+Rather than having to accommodate every type of bulb and whether or not that specific lamp is on or off, you can use methods to simply alter the state and behaviour of the lamp.
    
    https://github.com/frohoff/ysoserial
    
